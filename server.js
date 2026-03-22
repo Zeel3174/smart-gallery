@@ -8,7 +8,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
+app.get("/", (req, res) => {
+  res.send("Smart Gallery is running 🚀");
+});
 // ✅ IMPORTANT
 app.use("/uploads", express.static("uploads"));
 app.use("/api/media", mediaRoutes);
